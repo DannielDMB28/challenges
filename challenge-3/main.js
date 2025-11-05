@@ -7,6 +7,8 @@ function isValidEmail (email) {
 };
 
 function isValidSenha (senha) {
-    const senhaValidacao = senha.length // errado, concerte
-
+    const tamanhoString = senha.length >= 8; 
+    const letras = [a-zA-Z];
+    const numeros = /\d/;
+    return tamanhoString && letras && numeros
 };
