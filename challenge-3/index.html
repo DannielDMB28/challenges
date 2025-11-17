@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+      .valid {
+        border-color: green;
+      }
+
+      .invalid {
+        border-color: red;
+      }
+    </style>
+
 </head>
 <body>
   <script src="main.js"></script>
-    <h2>Validação de Email e Senha</h2>
+  <h2>Validação de Email e Senha</h2>
 
   <label>Email:</label>
   <input type="text" id="email" placeholder="Digite seu email">
