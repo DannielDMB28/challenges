@@ -11,12 +11,42 @@ function atualizarContador() {
 };
 
 function adicionarTarefa() {
-    const texto = input.ariaValueMax.trim()
+    const texto = input.value.trim()
 
     if(texto === "") {
         alert("Digite um textro");
         return;
     }
+    
+    const li = document.createElement("li");
+    li.textContent = texto;
 
+    li.addEventListener("click", () => {
+        li.classList.toggle("done");
+        const botaoRemover = document.createElement("button");
+        botaoRemover.textContent = "Remover";
+        botaoRemover.classList.add("remove-btn");
+    });
 
-}
+    botaoRemover.addEventListener("click", (event) => {
+        event.stopPropagation();
+        li.remove();
+        atualizarContador();
+    });
+
+    li.appendChild(botaoRemover);
+
+    lista.appendChild(li);
+
+    input.value = "";
+
+    atualizarContador();
+
+    btnAdicionar.addEventListener("click", adicionarTarefa);
+
+    eventoinput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            adicionarTarefa();
+        }
+    });
+};
